@@ -98,5 +98,13 @@ namespace DatabaseFormAC
                 MessageBox.Show("0 rows affected");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
+
+            //Displays Non-Modal Form
+            form.Show();
+        }
     }
 }

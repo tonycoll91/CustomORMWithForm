@@ -51,6 +51,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.newRecordbtn = new System.Windows.Forms.Button();
             this.submitbtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // gobtn
@@ -247,11 +248,22 @@
             this.submitbtn.UseVisualStyleBackColor = true;
             this.submitbtn.Click += new System.EventHandler(this.submitbtn_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(42, 364);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Form2";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(281, 352);
+            this.ClientSize = new System.Drawing.Size(284, 421);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.submitbtn);
             this.Controls.Add(this.newRecordbtn);
             this.Controls.Add(this.label9);
@@ -308,6 +320,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button newRecordbtn;
         private System.Windows.Forms.Button submitbtn;
+        private System.Windows.Forms.Button button1;
     }
 }
 
