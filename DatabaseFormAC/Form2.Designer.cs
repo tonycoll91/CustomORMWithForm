@@ -109,6 +109,7 @@
             this.gobtn.TabIndex = 14;
             this.gobtn.Text = "GO";
             this.gobtn.UseVisualStyleBackColor = true;
+            this.gobtn.Click += new System.EventHandler(this.gobtn_Click);
             // 
             // updatebtn
             // 
@@ -118,6 +119,7 @@
             this.updatebtn.TabIndex = 15;
             this.updatebtn.Text = "Commit Update";
             this.updatebtn.UseVisualStyleBackColor = true;
+            this.updatebtn.Click += new System.EventHandler(this.updatebtn_Click);
             // 
             // deletebtn
             // 
@@ -127,6 +129,7 @@
             this.deletebtn.TabIndex = 16;
             this.deletebtn.Text = "Delete";
             this.deletebtn.UseVisualStyleBackColor = true;
+            this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
             // 
             // label4
             // 
@@ -186,6 +189,7 @@
             // 
             this.Marina_numtxt.Location = new System.Drawing.Point(135, 130);
             this.Marina_numtxt.Name = "Marina_numtxt";
+            this.Marina_numtxt.ReadOnly = true;
             this.Marina_numtxt.Size = new System.Drawing.Size(152, 20);
             this.Marina_numtxt.TabIndex = 23;
             // 
@@ -232,6 +236,7 @@
             this.newRecordbtn.TabIndex = 29;
             this.newRecordbtn.Text = "New Record";
             this.newRecordbtn.UseVisualStyleBackColor = true;
+            this.newRecordbtn.Click += new System.EventHandler(this.newRecordbtn_Click);
             // 
             // submitbtn
             // 
@@ -241,6 +246,7 @@
             this.submitbtn.TabIndex = 30;
             this.submitbtn.Text = "Commit New Record";
             this.submitbtn.UseVisualStyleBackColor = true;
+            this.submitbtn.Click += new System.EventHandler(this.submitbtn_Click);
             // 
             // Form2
             // 
