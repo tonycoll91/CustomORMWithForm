@@ -51,6 +51,7 @@
             this.Marina_ziptxt = new System.Windows.Forms.TextBox();
             this.newRecordbtn = new System.Windows.Forms.Button();
             this.submitbtn = new System.Windows.Forms.Button();
+            this.btnAllMarinas = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -230,7 +231,7 @@
             // 
             // newRecordbtn
             // 
-            this.newRecordbtn.Location = new System.Drawing.Point(36, 312);
+            this.newRecordbtn.Location = new System.Drawing.Point(36, 291);
             this.newRecordbtn.Name = "newRecordbtn";
             this.newRecordbtn.Size = new System.Drawing.Size(102, 23);
             this.newRecordbtn.TabIndex = 29;
@@ -240,19 +241,29 @@
             // 
             // submitbtn
             // 
-            this.submitbtn.Location = new System.Drawing.Point(157, 312);
+            this.submitbtn.Location = new System.Drawing.Point(157, 291);
             this.submitbtn.Name = "submitbtn";
             this.submitbtn.Size = new System.Drawing.Size(120, 23);
             this.submitbtn.TabIndex = 30;
-            this.submitbtn.Text = "Commit New Record";
+            this.submitbtn.Text = "Submit New Record";
             this.submitbtn.UseVisualStyleBackColor = true;
             this.submitbtn.Click += new System.EventHandler(this.submitbtn_Click);
+            // 
+            // btnAllMarinas
+            // 
+            this.btnAllMarinas.Location = new System.Drawing.Point(100, 320);
+            this.btnAllMarinas.Name = "btnAllMarinas";
+            this.btnAllMarinas.Size = new System.Drawing.Size(108, 23);
+            this.btnAllMarinas.TabIndex = 31;
+            this.btnAllMarinas.Text = "Show All Marinas";
+            this.btnAllMarinas.UseVisualStyleBackColor = true;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(315, 348);
+            this.Controls.Add(this.btnAllMarinas);
             this.Controls.Add(this.submitbtn);
             this.Controls.Add(this.newRecordbtn);
             this.Controls.Add(this.Marina_ziptxt);
@@ -308,5 +319,6 @@
         private System.Windows.Forms.TextBox Marina_ziptxt;
         private System.Windows.Forms.Button newRecordbtn;
         private System.Windows.Forms.Button submitbtn;
+        private System.Windows.Forms.Button btnAllMarinas;
     }
 }

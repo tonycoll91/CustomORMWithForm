@@ -23,12 +23,22 @@ namespace DatabaseFormAC
             SqlConnection dbSqlConnection = new SqlConnection(Properties.Resources.DBConnectionString);
             dbSqlConnection.Open();
 
-                string sqlQueryString = "UPDATE marina SET name = '" + this.name + "',address = '" + this.address + "',city = '" + this.city + "', state = '" + this.state + "', zip = '" + this.zip + "' WHERE marina_num = '" + this.id + "';";
-                SqlCommand sqlCommand = new SqlCommand(sqlQueryString, dbSqlConnection);
-                int numRowsAffected = sqlCommand.ExecuteNonQuery();
+            string sqlQueryString;
 
-                dbSqlConnection.Close();
+            if (DoesMarinaExists(this.id) == false)
+            {
+                sqlQueryString = "INSERT INTO marina VALUES ('" + this.id + "','" + this.name + "','" + this.address + "','" + this.city + "','" + this.state + "','" + this.zip + "');"; 
+            }
+            else
+            {
+                sqlQueryString = "UPDATE marina SET name = '" + this.name + "',address = '" + this.address + "',city = '" + this.city + "', state = '" + this.state + "', zip = '" + this.zip + "' WHERE marina_num = '" + this.id + "';";
+            }
 
+            SqlCommand sqlCommand = new SqlCommand(sqlQueryString, dbSqlConnection);
+            int numRowsAffected = sqlCommand.ExecuteNonQuery();
+            
+            dbSqlConnection.Close();
+            
             return numRowsAffected;
         }
 
@@ -54,18 +64,21 @@ namespace DatabaseFormAC
             string sqlQueryString = "SELECT marina_num, name, address, city, state, zip FROM marina WHERE marina_num = " + id + ";";
             SqlCommand sqlCommand = new SqlCommand(sqlQueryString, dbSqlConnection);
             SqlDataReader reader = sqlCommand.ExecuteReader();
+
             Marina m1 = new Marina(); 
 
             //Read record in result set
-            reader.Read();
 
-            m1.id = reader[0].ToString().Trim();
-            m1.name = reader[1].ToString().Trim();
-            m1.address = reader[2].ToString().Trim();
-            m1.city = reader[3].ToString().Trim();
-            m1.state = reader[4].ToString().Trim();
-            m1.zip = reader[5].ToString().Trim();
-
+            if (reader.Read())
+            {
+                m1.id = reader[0].ToString().Trim();
+                m1.name = reader[1].ToString().Trim();
+                m1.address = reader[2].ToString().Trim();
+                m1.city = reader[3].ToString().Trim();
+                m1.state = reader[4].ToString().Trim();
+                m1.zip = reader[5].ToString().Trim();
+            }
+            
             reader.Close();
 
             dbSqlConnection.Close();
@@ -103,6 +116,15 @@ namespace DatabaseFormAC
             dbSqlConnection.Close();
 
             return marinas;
+        }
+
+        public static bool DoesMarinaExists(string id)
+        {
+            if (GetMarinaById(id).id == null)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

@@ -21,7 +21,7 @@ namespace DatabaseFormAC
         {
             Marina m1 = Marina.GetMarinaById(gototxt.Text);
 
-            Marina_numtxt.Text = m1.id  ;
+            Marina_numtxt.Text = m1.id;
             Marina_nametxt.Text = m1.name;
             Marina_addresstxt.Text = m1.address;
             Marina_citytxt.Text = m1.city;
