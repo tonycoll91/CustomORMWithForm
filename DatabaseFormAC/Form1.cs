@@ -12,13 +12,23 @@ using System.Windows.Forms;
 namespace DatabaseFormAC
 {
     public partial class Form1 : Form
-    {
+    { 
+        private MarinaDBConnector Marina;
+
         public Form1()
         {
             InitializeComponent();
-        }
 
-        private MarinaDBConnector Marina = new MarinaDBConnector("Data Source=(local);Initial Catalog=ALEXAMARA;User Id=sa;Password=abc123;Integrated Security=false;");
+            try
+            {
+                Marina = new MarinaDBConnector("Data Source=(local);Initial Catalog=ALEXAMARA;User Id=sa;Password=abc123;Integrated Security=false;");
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show("Database Has Bad Connection - Closing Program");
+                this.Close();
+            }
+        }
 
         private void gobtn_Click(object sender, EventArgs e)
         {

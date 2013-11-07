@@ -35,7 +35,6 @@
             this.updatetxt = new System.Windows.Forms.TextBox();
             this.deletetxt = new System.Windows.Forms.TextBox();
             this.gobtn = new System.Windows.Forms.Button();
-            this.updatebtn = new System.Windows.Forms.Button();
             this.deletebtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,7 +49,7 @@
             this.Marina_statetxt = new System.Windows.Forms.TextBox();
             this.Marina_ziptxt = new System.Windows.Forms.TextBox();
             this.newRecordbtn = new System.Windows.Forms.Button();
-            this.submitbtn = new System.Windows.Forms.Button();
+            this.savebtn = new System.Windows.Forms.Button();
             this.btnAllMarinas = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -77,9 +76,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(64, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 13);
+            this.label2.Size = new System.Drawing.Size(92, 13);
             this.label2.TabIndex = 10;
-            this.label2.Text = "UPDATE Record";
+            this.label2.Text = "Record to Update";
             // 
             // gototxt
             // 
@@ -111,16 +110,6 @@
             this.gobtn.Text = "GO";
             this.gobtn.UseVisualStyleBackColor = true;
             this.gobtn.Click += new System.EventHandler(this.gobtn_Click);
-            // 
-            // updatebtn
-            // 
-            this.updatebtn.Location = new System.Drawing.Point(189, 40);
-            this.updatebtn.Name = "updatebtn";
-            this.updatebtn.Size = new System.Drawing.Size(120, 23);
-            this.updatebtn.TabIndex = 15;
-            this.updatebtn.Text = "Commit Update";
-            this.updatebtn.UseVisualStyleBackColor = true;
-            this.updatebtn.Click += new System.EventHandler(this.updatebtn_Click);
             // 
             // deletebtn
             // 
@@ -239,15 +228,15 @@
             this.newRecordbtn.UseVisualStyleBackColor = true;
             this.newRecordbtn.Click += new System.EventHandler(this.newRecordbtn_Click);
             // 
-            // submitbtn
+            // savebtn
             // 
-            this.submitbtn.Location = new System.Drawing.Point(157, 291);
-            this.submitbtn.Name = "submitbtn";
-            this.submitbtn.Size = new System.Drawing.Size(120, 23);
-            this.submitbtn.TabIndex = 30;
-            this.submitbtn.Text = "Submit New Record";
-            this.submitbtn.UseVisualStyleBackColor = true;
-            this.submitbtn.Click += new System.EventHandler(this.submitbtn_Click);
+            this.savebtn.Location = new System.Drawing.Point(157, 291);
+            this.savebtn.Name = "savebtn";
+            this.savebtn.Size = new System.Drawing.Size(120, 23);
+            this.savebtn.TabIndex = 30;
+            this.savebtn.Text = "Save Changes";
+            this.savebtn.UseVisualStyleBackColor = true;
+            this.savebtn.Click += new System.EventHandler(this.submitbtn_Click);
             // 
             // btnAllMarinas
             // 
@@ -257,6 +246,7 @@
             this.btnAllMarinas.TabIndex = 31;
             this.btnAllMarinas.Text = "Show All Marinas";
             this.btnAllMarinas.UseVisualStyleBackColor = true;
+            this.btnAllMarinas.Click += new System.EventHandler(this.btnAllMarinas_Click);
             // 
             // Form2
             // 
@@ -264,7 +254,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(315, 348);
             this.Controls.Add(this.btnAllMarinas);
-            this.Controls.Add(this.submitbtn);
+            this.Controls.Add(this.savebtn);
             this.Controls.Add(this.newRecordbtn);
             this.Controls.Add(this.Marina_ziptxt);
             this.Controls.Add(this.Marina_statetxt);
@@ -279,7 +269,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.deletebtn);
-            this.Controls.Add(this.updatebtn);
             this.Controls.Add(this.gobtn);
             this.Controls.Add(this.deletetxt);
             this.Controls.Add(this.updatetxt);
@@ -303,7 +292,6 @@
         private System.Windows.Forms.TextBox updatetxt;
         private System.Windows.Forms.TextBox deletetxt;
         private System.Windows.Forms.Button gobtn;
-        private System.Windows.Forms.Button updatebtn;
         private System.Windows.Forms.Button deletebtn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -318,7 +306,7 @@
         private System.Windows.Forms.TextBox Marina_statetxt;
         private System.Windows.Forms.TextBox Marina_ziptxt;
         private System.Windows.Forms.Button newRecordbtn;
-        private System.Windows.Forms.Button submitbtn;
+        private System.Windows.Forms.Button savebtn;
         private System.Windows.Forms.Button btnAllMarinas;
     }
 }

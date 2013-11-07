@@ -18,8 +18,19 @@ namespace DatabaseFormAC
         /// <param name="dbConnectionString"></param>
         public MarinaDBConnector(string dbConnectionString)
         {
-            dbSqlConnection = new SqlConnection(dbConnectionString);
-            dbSqlConnection.Open();
+            try
+            {
+                dbSqlConnection = new SqlConnection(dbConnectionString);
+                dbSqlConnection.Open();
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         /// <summary>
@@ -43,14 +54,15 @@ namespace DatabaseFormAC
             MarinaDBRow row = new MarinaDBRow();
 
             //Read record in result set
-            reader.Read();
-           
-            row.id = reader[0].ToString().Trim();
-            row.name = reader[1].ToString().Trim();
-            row.address = reader[2].ToString().Trim();
-            row.city = reader[3].ToString().Trim();
-            row.state = reader[4].ToString().Trim();
-            row.zip = reader[5].ToString().Trim();
+            if (reader.Read())
+            {
+                row.id = reader[0].ToString().Trim();
+                row.name = reader[1].ToString().Trim();
+                row.address = reader[2].ToString().Trim();
+                row.city = reader[3].ToString().Trim();
+                row.state = reader[4].ToString().Trim();
+                row.zip = reader[5].ToString().Trim();
+            }
             
             reader.Close();
             return row;
